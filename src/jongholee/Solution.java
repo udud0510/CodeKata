@@ -18,16 +18,20 @@ public class Solution {
 
     public long solution(long a, long b) {
         long sum = 0;
+        long start = 0, end = 0;
+
         if (a <= b) {
-            for (long i = a; i <= b; i++) {
-                sum += i;
-            }
+            start = a;
+            end = b;
         }
 
         if (a > b) {
-            for (long i = a; i >= b; i--) {
-                sum += i;
-            }
+            start = b;
+            end = a;
+        }
+
+        for (long i = start; i <= end; i++) {
+            sum += i;
         }
 
         return sum;
