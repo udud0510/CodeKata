@@ -17,13 +17,13 @@ package jongholee;
 public class Solution {
 
     public long solution(long a, long b) {
-        long sum = 0;
+        long total = 0;
         long start = (a <= b) ? a : b, end = (a <= b) ? b : a;
 
         for (long i = start; i <= end; i++) {
-            sum += i;
+            total += i;
         }
 
-        return sum;
+        return total;
     }
 }
