@@ -17,33 +17,25 @@ package jongholee;
 public class Solution {
 
     public long solution(long a, long b) {
-
-        //TODO 뭐뭐 해야됨
-
+        long sum = 0;
         if (a < b) {
-            long sum = 0;
             for (long i = a; i <= b; i++) {
                 sum += i;
             }
-            return sum;
         }
 
         if (a == b) {
-            long sum = 0;
             for (long i = a; i <= b; i++) {
                 sum += i;
             }
-            return sum;
         }
 
         if (a > b) {
-            long sum = 0;
             for (long i = a; i >= b; i--) {
                 sum += i;
             }
-            return sum;
         }
 
-        return 0;
+        return sum;
     }
 }
