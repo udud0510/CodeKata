@@ -24,85 +24,60 @@ class Solution1 {
     public String solution(String[] participant, String[] completion) {
         String answer = "";
 
-        //[leo, kiki, eden]	[eden, kiki] leo
-        if (participant.length == 3 && completion.length == 2) {
+        Map<String, Integer> pMap = new HashMap<>();
 
-            //1. completion에 값을 participant에서 찾는다.
 
-            //2. 있으면 participant에서 값을 지운다.
+        for (String p : participant) {
+            //동명이인이 있으면,
+            if (pMap.get(p) != null) {
+                //기존 값에 1을 더해준 값을 추가해줌.
 
-            //3. 그렇게 completion과 비교되는 값을 다 지운다.
-            participant[1] = null;
-            participant[2] = null;
+                //기존 값.
+                int value = pMap.get(p);
 
-            //4. participant에서 안지워진 값을 출력한다.
-            for (int i = 0; i < participant.length; i++) {
-                if (participant[i] != null)
-                    answer = participant[i];
+                //기존값에 1을 더한 값
+                value++;
+
+                // 그 값을 넣어줌.
+                pMap.put(p, value);
+            } else { //동명이인이 없으면
+                pMap.put(p, 1); //1추가
             }
-//            answer = "leo";
         }
 
-        if (participant.length == 5 && completion.length == 4) {
-            answer = "vinko";
-        }
+        //mis -> 2, 1
+        //sta -> 1, 1
+        //ana -> 1, 1
 
-        if (participant.length == 4 && completion.length == 3) {
+        //C에 있는 단어들은 P에서 개수를 뺀다.
+        //P에 있는 단어 중 C에 존재하면 P의 단어 개수 -1
+        for (String c : completion) {
 
-            //[mislav, stanko, mislav, ana]	[stanko, ana, mislav]	mislav
+            //P에 C에 값이 있는 경우 -1
+            //
 
-            //각 단어별로 얼마나 존재하는지 카운트를 센다. (P, C) -> 맵으로 만든다.
-            Map<String, Integer> pMap = new HashMap<>();
-
-
-            for (String p : participant) {
-                //동명이인이 있으면,
-                if (pMap.get(p) != null) {
-                    //기존 값에 1을 더해준 값을 추가해줌.
-
-                    //기존 값.
-                    int value = pMap.get(p);
-
-                    //기존값에 1을 더한 값
-                    value++;
-
-                    // 그 값을 넣어줌.
-                    pMap.put(p, value);
-                } else { //동명이인이 없으면
-                    pMap.put(p, 1); //1추가
-                }
+            if (pMap.get(c) != null) {
+                int value = pMap.get(c) - 1;
+                pMap.put(c, value);
             }
 
-            //mis -> 2, 1
-            //sta -> 1, 1
-            //ana -> 1, 1
-
-            //C에 있는 단어들은 P에서 개수를 뺀다.
-            //P에 있는 단어 중 C에 존재하면 P의 단어 개수 -1
-            for (String c : completion) {
-
-                //P에 C에 값이 있는 경우 -1
-                //
-
-                if (pMap.get(c) != null) {
-                    int value = pMap.get(c) - 1;
-                    pMap.put(c, value);
-                }
-
-            }
-
-
-
-
-            //mis -> 1, 1
-            //sta -> 0, 1
-            //ana -> 0, 1
-
-            //0이 아닌 녀석은 정답!
-
-            answer = "mislav";
         }
 
+
+        for (String key : pMap.keySet()) {
+            if (pMap.get(key) != 0) {
+                answer = key;
+            }
+        }
+
+
+        //mis -> 1, 1
+        //sta -> 0, 1
+        //ana -> 0, 1
+
+        //0이 아닌 녀석은 정답!
+
+//            answer = "mislav";
         return answer;
     }
 
