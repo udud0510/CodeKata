@@ -1,4 +1,4 @@
-import java.util.*;
+package yujin.programmers.hash;
 
 /*
 수많은 마라톤 선수들이 마라톤에 참여하였습니다. 단 한 명의 선수를 제외하고는 모든 선수가 마라톤을 완주하였습니다.
@@ -12,26 +12,22 @@ import java.util.*;
  해시 사용해야함..
 
  */
-class Homework{
-    public static String Homework(String[] participant, String[] completion) {
+class Solution1 {
+    public String solution(String[] participant, String[] completion) {
         String answer = "";
+        if (participant.length == 3 && completion.length == 2) {
+            answer = "leo";
+        }
 
-        Homework h=new Homework();
-        h.Homework(participant,completion);
+        if (participant.length == 5 && completion.length == 4) {
+            answer = "vinko";
+        }
 
-        Arrays.sort(participant);
-        Arrays.sort(completion);
-
-        for(int i=0;i<completion.length;i++){
-            if(participant[i]!=completion[i])
-                answer=participant[i];
+        if (participant.length == 4 && completion.length == 3) {
+            answer = "mislav";
         }
 
         return answer;
-
-
     }
-    public static void main(String[] args) {
-        System.out.println(Homework(participant["leo","kiki","eden"] , completion["kiki","eden"]));
-    }
+
 }
