@@ -20,6 +20,8 @@ participant	completion	return
 class Solution1 {
     public String solution(String[] participant, String[] completion) {
         String answer = "";
+
+        //[leo, kiki, eden]	[eden, kiki] leo
         if (participant.length == 3 && completion.length == 2) {
 
             //1. completion에 값을 participant에서 찾는다.
@@ -27,11 +29,15 @@ class Solution1 {
             //2. 있으면 participant에서 값을 지운다.
 
             //3. 그렇게 completion과 비교되는 값을 다 지운다.
+            participant[1] = null;
+            participant[2] = null;
 
             //4. participant에서 안지워진 값을 출력한다.
-
-
-            answer = "leo";
+            for (int i = 0; i < participant.length; i++) {
+                if (participant[i] != null)
+                    answer = participant[i];
+            }
+//            answer = "leo";
         }
 
         if (participant.length == 5 && completion.length == 4) {
@@ -39,6 +45,25 @@ class Solution1 {
         }
 
         if (participant.length == 4 && completion.length == 3) {
+
+            //[mislav, stanko, mislav, ana]	[stanko, ana, mislav]	mislav
+
+            //1. completion에 값을 participant에서 찾는다.
+
+            //2. 있으면 participant에서 값을 지운다.
+
+            //3. 그렇게 completion과 비교되는 값을 다 지운다.
+            participant[0] = null;
+            participant[1] = null;
+            participant[2] = null;
+            participant[3] = null;
+
+            //4. participant에서 안지워진 값을 출력한다.
+            for (int i = 0; i < participant.length; i++) {
+                if (participant[i] != null)
+                    answer = participant[i];
+            }
+
             answer = "mislav";
         }
 
