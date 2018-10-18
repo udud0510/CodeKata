@@ -11,11 +11,26 @@ package yujin.programmers.hash;
 
  해시 사용해야함..
 
+participant	completion	return
+[leo, kiki, eden]	[eden, kiki]	leo
+[marina, josipa, nikola, vinko, filipa]	[josipa, filipa, marina, nikola]	vinko
+[mislav, stanko, mislav, ana]	[stanko, ana, mislav]	mislav
+
  */
 class Solution1 {
     public String solution(String[] participant, String[] completion) {
         String answer = "";
         if (participant.length == 3 && completion.length == 2) {
+
+            //1. completion에 값을 participant에서 찾는다.
+
+            //2. 있으면 participant에서 값을 지운다.
+
+            //3. 그렇게 completion과 비교되는 값을 다 지운다.
+
+            //4. participant에서 안지워진 값을 출력한다.
+
+
             answer = "leo";
         }
 
