@@ -26,43 +26,20 @@ class Solution1 {
 
         Map<String, Integer> pMap = new HashMap<>();
 
-
-        for (String p : participant) {
-            //동명이인이 있으면,
-            if (pMap.get(p) != null) {
-                //기존 값에 1을 더해준 값을 추가해줌.
-
-                //기존 값.
-                int value = pMap.get(p);
-
-                //기존값에 1을 더한 값
-                value++;
-
-                // 그 값을 넣어줌.
-                pMap.put(p, value);
+        for (String key : participant) {
+            if (pMap.containsKey(key)) {
+                pMap.put(key, pMap.get(key) + 1);
             } else { //동명이인이 없으면
-                pMap.put(p, 1); //1추가
+                pMap.put(key, 1); //1추가
             }
         }
 
-        //mis -> 2, 1
-        //sta -> 1, 1
-        //ana -> 1, 1
-
-        //C에 있는 단어들은 P에서 개수를 뺀다.
-        //P에 있는 단어 중 C에 존재하면 P의 단어 개수 -1
-        for (String c : completion) {
-
-            //P에 C에 값이 있는 경우 -1
-            //
-
-            if (pMap.get(c) != null) {
-                int value = pMap.get(c) - 1;
-                pMap.put(c, value);
+        for (String key : completion) {
+            if (pMap.containsKey(key)) {
+                pMap.put(key, pMap.get(key) - 1);
             }
 
         }
-
 
         for (String key : pMap.keySet()) {
             if (pMap.get(key) != 0) {
@@ -70,14 +47,6 @@ class Solution1 {
             }
         }
 
-
-        //mis -> 1, 1
-        //sta -> 0, 1
-        //ana -> 0, 1
-
-        //0이 아닌 녀석은 정답!
-
-//            answer = "mislav";
         return answer;
     }
 
