@@ -31,12 +31,10 @@ public class Solution2 {
         //  - 자바 String 문법 공부
 
         Arrays.sort(phone_book);
-
         for(int i=0;i<phone_book.length;i++){
-            for(int j=1;j<phone_book.length;j++){
+            for(int j=1;j<phone_book.length-1;j++){
                 if(phone_book[j].startsWith(phone_book[i])==true) {
                     answer = false;
-                    return answer;
                 }
             }
         }
