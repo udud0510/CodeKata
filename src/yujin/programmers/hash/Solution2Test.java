@@ -15,7 +15,6 @@ public class Solution2Test {
         String p2[] = {"123", "456", "789"};
         String p3[] = {"12", "123", "1235", "567","88"};
 
-
         assertEquals(false, solution.solution(p1));
         assertEquals(true, solution.solution(p2));
         assertEquals(false, solution.solution(p3));

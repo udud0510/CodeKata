@@ -22,7 +22,6 @@ import java.util.HashMap;
         [123,456,789]	                true
         [12,123,1235,567,88]	        false
         */
-
 public class Solution2 {
     public boolean solution(String[] phone_book) {
         boolean answer = true;
