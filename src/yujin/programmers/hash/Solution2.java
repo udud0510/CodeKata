@@ -50,7 +50,6 @@ public class Solution2 {
             return name1.compareTo(name2);
         });
 
-
         for(int i=0;i<phone_book.length;i++){
             for(int j=1;j<phone_book.length;j++){
                 if(i==j) continue;

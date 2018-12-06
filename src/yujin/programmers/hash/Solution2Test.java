@@ -18,7 +18,6 @@ public class Solution2Test {
         assertEquals(false, solution.solution(p1));
         assertEquals(true, solution.solution(p2));
         assertEquals(false, solution.solution(p3));
-
     }
 
 }
