@@ -22,7 +22,7 @@ public class Solution2Test {
 
         int[] array3 = {1,5,2,6,3,7,4};
         int[][] commands3 = {{1,7,3}};
-        int[] Return3 = {3};
+        int[] Return3 = {3}; 
         assertArrayEquals(Return3,solution.solution(array3,commands3));
 
     }
