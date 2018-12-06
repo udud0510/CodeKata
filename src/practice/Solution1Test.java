@@ -14,4 +14,5 @@ public class Solution1Test {
         assertEquals("we", solution.solution("qwer"));
 
     }
+
 }
