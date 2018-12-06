@@ -19,18 +19,20 @@ public class Solution2 {
         // 헤멘 이유 1 : substring 사용 안됨 String이 아니라서. 배열을 원하는 만큼 자르기 위해서는 copyOfRange 사용
         // 헤멘 이유 2 : copyOfRange의 마지막 인자는 포함하는거 아님
 
+        // 0. answer의 배열 길이 설정해주기
         // 1.array를 자른다. 자르는 시작값 : commands[0][0]-1 종료값 : commands[0][1]
         // 2. 자른 array를 sort를 이용하여 정렬한다.
         // 3. 정렬된 array 중 commands[0][2]-1 값을 뽑아낸다
         // commands 시작값 에서 1 빼는 이유 : 배열의 인덱스는 0부터 시작하기 때문에
-        int[] answer = {0};
 
+        int[] answer = new int[commands.length];
         int[] middle = {};
-        middle = Arrays.copyOfRange(array,commands[0][0]-1,commands[0][1]);
-        Arrays.sort(middle);
 
-        answer[0] = middle[commands[0][2]-1];
-
+        for (int i=0; i<commands.length; i++){
+            middle = Arrays.copyOfRange(array,commands[i][0]-1,commands[i][1]);
+            Arrays.sort(middle);
+            answer[i] = middle[commands[i][2]-1];
+        }
        return answer;
     }
 }
