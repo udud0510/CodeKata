@@ -16,7 +16,6 @@ public class Solution3 {
 
     */
     public int[] solution(int[] arr, int divisor){
-        //int[] answer = new int[arr.length];
         int j=0;
 
         for(int i=0;i<arr.length;i++){
@@ -24,7 +23,15 @@ public class Solution3 {
                 j=j+1;
             }
         }
+
         int[] answer = new int[j];
+
+        // 나누어 떨어지는 경우가 없을때 -1 반환 예외처리
+        // JUnit을 사용해서 테스트시에는 오류가 발생하지 않지만
+        // 프로그래머스에선 오류가 발생하여 추가
+        if(j==0){
+            answer = new int[]{-1};
+        }
         j=0;
         for(int i=0;i<arr.length;i++){
             if (arr[i]%divisor==0){
