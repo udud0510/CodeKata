@@ -24,7 +24,7 @@ public class Solution2 {
         // 2. 자른 array를 sort를 이용하여 정렬한다.
         // 3. 정렬된 array 중 commands[0][2]-1 값을 뽑아낸다
         // commands 시작값 에서 1 빼는 이유 : 배열의 인덱스는 0부터 시작하기 때문에
- 
+
         int[] answer = new int[commands.length];
         int[] middle = {};
 
