@@ -1,4 +1,4 @@
-package practice;
+package level1;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

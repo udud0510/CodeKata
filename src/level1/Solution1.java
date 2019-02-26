@@ -1,4 +1,4 @@
-package practice;
+package level1;
 public class Solution1 {
     // 가운데 글자 가져오기
     
