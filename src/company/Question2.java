@@ -65,10 +65,12 @@ public class Question2 {
             Iterator<String> keySetIterator = map.keySet().iterator();
 
             System.out.print(x + " -> ");
+
             while (keySetIterator.hasNext()) {
                 String key = keySetIterator.next();
                 realAnswer.put(key, map.get(key));
             }
+
             for (Object o : sortByValue(realAnswer)) {
                 String temp = (String) o;
                 System.out.print(temp + " : " + realAnswer.get(temp) + " ");
@@ -141,11 +143,18 @@ public class Question2 {
     @SuppressWarnings({ "rawtypes", "unchecked" })
     private static List sortByValue(final HashMap map) {
 
-        List<String> list = new ArrayList(map.keySet());
-        list.sort((Comparator) (o1, o2) -> {
-            Object v1 = map.get(o1);
-            Object v2 = map.get(o2);
-            return ((Comparable) v2).compareTo(v1);
+        List<String> list = new ArrayList();
+
+        list.addAll(map.keySet());
+        Collections.sort(list, new Comparator() {
+            public int compare(Object o1, Object o2) {
+
+                Object v1 = map.get(o1);
+
+                Object v2 = map.get(o2);
+                return ((Comparable) v2).compareTo(v1);
+
+            }
         });
         return list;
     }
