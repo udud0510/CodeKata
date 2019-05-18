@@ -91,7 +91,7 @@ public class Question3 {
             map.put(tempFile.getName(), data);
         }
     }
-
+ 
     // 코사인 유사도
     private static double cosineSimilarity(HashMap<Character, Integer> hashMap, HashMap<Character, Integer> hashMap2) {
         double deno = 0.0;
