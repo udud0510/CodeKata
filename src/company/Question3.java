@@ -5,10 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -54,7 +52,6 @@ public class Question3 {
 
                 }
             }
-
             //정렬해서 출력
             for (Object o : sortByValue(realAnswer)) {
                 String temp = (String) o;
