@@ -15,7 +15,12 @@ public class Solution19Test {
 		int[] arr2 = { 10 };
 		int[] answer2 = { -1 };
 
+		int[] arr3 = { 5,1,2,6,8 };
+		int[] answer3 = {5,2,6,8 };
+		
+
 		assertArrayEquals(answer, solution.solution(arr));
 		assertArrayEquals(answer2, solution.solution(arr2));
+		assertArrayEquals(answer3, solution.solution(arr3));
 	}
 }

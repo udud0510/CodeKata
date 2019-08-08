@@ -3,7 +3,6 @@ package level1;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Solution19 {
 
 	/*
@@ -26,28 +25,30 @@ public class Solution19 {
 	public int[] solution(int[] arr) {
 		int[] answer = {};
 		List<Integer> list = new ArrayList<Integer>();
-		
+
 		int min = arr[0];
 		if (arr.length == 1) {
-			answer = new int[] {-1};
+			answer = new int[] { -1 };
 			return answer;
 		}
-		for(int i=0;i<arr.length;i++) {
-			if(min>arr[i]);{
+		for (int i = 0; i < arr.length; i++) {
+			if (min > arr[i]) {
 				min = arr[i];
 			}
 		}
-		for(int i=0;i<arr.length;i++) {
-				list.add(arr[i]);
-				if(arr[i]==min) {
-					list.remove(i);
-				}
-		}
-		answer=new int[list.size()];
+		for (int i = 0; i < arr.length; i++) {
 
-		for(int i=0; i<list.size();i++) {
-			answer[i]=list.get(i);
+			if (arr[i] != min) {
+				list.add(arr[i]);
+			}
+		}
+
+		answer = new int[list.size()];
+
+		for (int i = 0; i < list.size(); i++) {
+			answer[i] = list.get(i);
 		}
 		return answer;
+
 	}
 }
