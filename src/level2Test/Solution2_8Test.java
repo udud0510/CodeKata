@@ -1,6 +1,8 @@
-package level2;
+package level2Test;
 
 import org.junit.Test;
+
+import level2.Solution2_8;
 
 import static org.junit.Assert.assertEquals;
 
