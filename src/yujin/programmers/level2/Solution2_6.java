@@ -1,4 +1,4 @@
-package level2;
+package yujin.programmers.level2;
 
 public class Solution2_6 {
     /*

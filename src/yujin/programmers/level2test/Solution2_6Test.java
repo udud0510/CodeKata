@@ -1,8 +1,8 @@
-package level2Test;
+package yujin.programmers.level2test;
 
 import org.junit.Test;
 
-import level2.Solution2_6;
+import yujin.programmers.level2.Solution2_6;
 
 import static org.junit.Assert.assertArrayEquals;
 public class Solution2_6Test {
