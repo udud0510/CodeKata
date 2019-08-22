@@ -1,4 +1,4 @@
-package level2;
+package yujin.programmers.level2;
 
 import java.util.ArrayList;
 import java.util.List;
