@@ -1,6 +1,9 @@
-package level2;
+package level2Test;
 
 import org.junit.Test;
+
+import level2.Solution2_6;
+
 import static org.junit.Assert.assertArrayEquals;
 public class Solution2_6Test {
     @Test
