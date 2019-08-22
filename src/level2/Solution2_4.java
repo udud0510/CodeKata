@@ -37,7 +37,7 @@ public class Solution2_4 {
     ## 예시
 
     stock	  dates	      supplies	  k	   result
-    4	      [4,10,15]	  [20,5,10]	  30	 2
+    4	      	[4,10,15]	  [20,5,10]	  30	 	2
 */
     public int solution(int stock, int[] dates, int[] supplies, int k) {
         int answer = 0;
