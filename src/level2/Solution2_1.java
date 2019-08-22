@@ -17,7 +17,7 @@ public class Solution2_1 {
             n=a;
         }
         StringBuilder sb = new StringBuilder(answer);
-
+         
         answer=sb.reverse().toString();
         return answer;
     }
