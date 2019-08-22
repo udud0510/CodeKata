@@ -15,7 +15,7 @@ public class Solution2_2 {
     )()(	     false
     (()(	     false
     */
-    boolean solution(String s) {
+    public boolean solution(String s) {
         int left = 0;
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '(') {
