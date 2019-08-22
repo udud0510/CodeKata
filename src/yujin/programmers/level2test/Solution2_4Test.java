@@ -1,9 +1,9 @@
-package level2Test;
+package yujin.programmers.level2test;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import level2.Solution2_4;
+import yujin.programmers.level2.Solution2_4;
 
 public class Solution2_4Test {
     @Test
