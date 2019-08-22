@@ -1,10 +1,10 @@
-package level2Test;
+package yujin.programmers.level2test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import level2.Solution2_2;
+import yujin.programmers.level2.Solution2_2;
 
 public class Solution2_2Test {
     @Test
