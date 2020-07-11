@@ -1,10 +1,11 @@
 package yujin.programmers.level2test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
 
 import yujin.programmers.level2.Solution2_9;
+
+import static org.junit.Assert.assertEquals;
 
 public class Solution2_9Test {
 	@Test
