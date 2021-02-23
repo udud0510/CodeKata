@@ -10,8 +10,25 @@ public class Solution2_11 {
 	 * 8	12	80
 	 */
 
-	public long solution(int w, int h) {
-		long answer = 1;
+	public long solution(long w, long h) {
+
+		long max = Math.max(w, h);
+		long min = Math.min(w, h);
+
+		long gcd = getGCD(max, min);
+
+		long answer = w * h - (w + h - gcd);
+
 		return answer;
+
+	}
+
+	public static long getGCD(long a, long b) {
+		while (b > 0) {
+			long tmp = a;
+			a = b;
+			b = tmp % b;
+		}
+		return a;
 	}
 }
