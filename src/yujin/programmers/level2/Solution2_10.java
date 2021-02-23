@@ -1,5 +1,10 @@
 package yujin.programmers.level2;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class Solution2_10 {
 
 	/*
@@ -25,7 +30,40 @@ public class Solution2_10 {
 	 */
 
 	public int[] solution(int[] progresses, int[] speeds) {
-		int[] answer = {};
+
+		// 끝나는 날짜 계산
+		Queue<Integer> endDate = new LinkedList<>();
+		List<Integer> answerList = new ArrayList<>();
+		// 최대 날짜 변수
+		int max = 0;
+		// 작업날짜는 무조건 1일부터 시작이므로
+		int count = 1;
+
+		for (int i = 0; i < progresses.length; i++) {
+			// 100에서 진행된 작업을 빼고 speeds로 나눈 값을 올림 해서 남을 일수 구하기
+			//endDate.add((int)Math.ceil((100-progresses[i])/speeds[i]));
+			endDate.add((100 - progresses[i]) % speeds[i] == 0 ? (100 - progresses[i]) / speeds[i] :
+				(100 - progresses[i]) / speeds[i] + 1);
+		}
+
+		// 비교 기준이 되는 날짜 구하기
+		int first = endDate.poll();
+
+		while (!endDate.isEmpty()) {
+			max = endDate.poll();
+			if (max <= first) {
+				count++;
+			} else {
+				answerList.add(count);
+				first = max;
+				count = 1;
+			}
+		}
+
+		int[] answer = new int[answerList.size()];
+		for (int i = 0; i < answer.length; i++) {
+			answer[i] = answerList.get(i);
+		}
 		return answer;
 	}
 
